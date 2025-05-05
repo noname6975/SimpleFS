@@ -13,7 +13,7 @@ FILE* open_fs_file(const char* filename);
  • FILE* — указатель на открытый файл.
 ```
 
-view_file_from_fs
+###view_file_from_fs
 
 ```c
 char* view_file_from_fs(FILE* fs, const char* target_filename);
