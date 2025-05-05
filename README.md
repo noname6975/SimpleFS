@@ -1,10 +1,9 @@
-C2
-
 # Документация функций файловой системы
 ## Реализованные функции
+
 ### open_fs_file
 
-````c
+```c
 FILE* open_fs_file(const char* filename);
 Описание:
 Открывает файл файловой системы. Если файл не существует — создаёт и открывает его.
@@ -12,9 +11,11 @@ FILE* open_fs_file(const char* filename);
  • filename (const char*) — имя файла файловой системы.
 Возвращает:
  • FILE* — указатель на открытый файл.
-
+```
 
 view_file_from_fs
+
+```c
 char* view_file_from_fs(FILE* fs, const char* target_filename);
 Описание:
 Находит файл внутри файловой системы и возвращает его содержимое как строку.
@@ -24,18 +25,11 @@ char* view_file_from_fs(FILE* fs, const char* target_filename);
  • target_filename (const char*) — имя нужного файла внутри файловой системы.
 Возвращает:
  • char* — содержимое файла. Если файл не найден, возвращается NULL.
+```
 
-
-
-
-
-C3
-
-# Документация функций файловой системы
-## Реализованные функции
 ### add_new_file
 
-````c
+```c
 void add_new_file(FILE* fs, const char* filename, const char* content);
 Описание:
 Добавляет новый файл в файловую систему. В конце файла записывается имя нового файла и его содержимое.
@@ -45,9 +39,11 @@ void add_new_file(FILE* fs, const char* filename, const char* content);
  • content (const char*) — содержимое файла.
 Возвращает:
  • void — не возвращает значения.
+```
 
+##modify_file
 
-modify_file
+```c
 void modify_file(FILE* fs, const char* filename, const char* new_content);
 Описание:
 Изменяет файл в файловой системе, заменяя его содержимое новым. Строка с названием файла остаётся, а содержимое обновляется.
@@ -57,4 +53,4 @@ void modify_file(FILE* fs, const char* filename, const char* new_content);
  • new_content (const char*) — новое содержимое файла.
 Возвращает:
  • void — не возвращает значения.
-
+```
