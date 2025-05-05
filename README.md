@@ -13,7 +13,7 @@ FILE* open_fs_file(const char* filename);
  • FILE* — указатель на открытый файл.
 ```
 
-###view_file_from_fs
+### view_file_from_fs
 
 ```c
 char* view_file_from_fs(FILE* fs, const char* target_filename);
@@ -41,7 +41,7 @@ void add_new_file(FILE* fs, const char* filename, const char* content);
  • void — не возвращает значения.
 ```
 
-##modify_file
+### modify_file
 
 ```c
 void modify_file(FILE* fs, const char* filename, const char* new_content);
