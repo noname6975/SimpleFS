@@ -54,3 +54,16 @@ void modify_file(FILE* fs, const char* filename, const char* new_content);
 Возвращает:
  • void — не возвращает значения.
 ```
+
+### delete_file_from_fs
+
+```c
+void delete_file_from_fs(FILE* fs, const char* target_filename);
+Описание:
+Удаляет указанный файл из файловой системы. Удаляется как строка с названием файла, так и всё его содержимое до следующего файла или конца системы.
+Параметры:
+ • fs (FILE*) — файловая система (открытый файл).
+ • target_filename (const char*) — имя файла, который нужно удалить.
+Возвращает:
+ • void — не возвращает значения.
+```
