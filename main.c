@@ -4,10 +4,10 @@
 int main() {
     const char *fname = "test.txt";
 
-    create_file(fname);
-    write_to_file(fname, "Привет, мир!\n");
-    printf("Содержимое файла:\n");
-    read_file(fname);
+    FILE *fs = open_fs_file("filesystem.disk");
+    add_new_file(fs, "/test.txt", "Привет\nМир");
+    // char line[] = view_file_from_fs(fs, "/test.txt");
+    printf("%s", view_file_from_fs(fs, "/test.txt"));
 
     return 0;
 }
