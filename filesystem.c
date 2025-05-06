@@ -144,3 +144,45 @@ void modify_file(FILE* fs, const char* filename, const char* new_content) {
 
     free(buffer);
 }
+
+
+
+// C4
+#include <stdio.h>
+#include "filesystem.h"
+
+void create_file(const char *filename) {
+    FILE *f = fopen(filename, "w");
+    if (f) fclose(f);
+}
+
+void delete_file(const char *filename) {
+    remove(filename);
+}
+
+void write_to_file(const char *filename, const char *content) {
+    FILE *f = fopen(filename, "a");
+    if (f) {
+        fputs(content, f);
+        fclose(f);
+    }
+}
+
+void read_file(const char *filename) {
+    char ch;
+    FILE *f = fopen(filename, "r");
+    if (f) {
+        while ((ch = fgetc(f)) != EOF)
+            putchar(ch);
+        fclose(f);
+    }
+}
+
+int file_exists(const char *filename) {
+    FILE *f = fopen(filename, "r");
+    if (f) {
+        fclose(f);
+        return 1;
+    }
+    return 0;
+}
